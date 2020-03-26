@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">covid19-app</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--    <string name="nav_header_title">Android Studio</string>-->
+    <!--    <string name="nav_header_subtitle">android.studio@android.com</string>-->
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_report_case">Report a Case</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_helpline">Helpline</string>
+    <string name="menu_awareness">Corona Awareness</string>
+    <string name="menu_faqs">FAQs</string>
+    <string name="menu_report_new_case">Report New Case</string>
+    <string name="menu_about">About</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_feedback">Feedback</string>
+
+    <string name="tab_label_india">National</string>
+    <string name="tab_label_statewise">Statewise</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="case_status_confirmed">Confirmed</string>
+    <string name="case_status_active">"   Active   "</string>
+    <string name="case_status_recovered">Recovered</string>
+    <string name="case_status_deceased">Deceased</string>
+
+    <!-- dialogue-->
+    <string name="text_view_loading">Loading...</string>
+    <string name="text_view_message">Be Patient, Good Things Take Time!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
