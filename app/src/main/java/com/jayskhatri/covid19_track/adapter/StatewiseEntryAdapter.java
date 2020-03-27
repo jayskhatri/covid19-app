@@ -38,10 +38,16 @@ public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAd
         String delta_death = entries.get(position).getDelta_deceased();
 
         holder.state.setText(state);
+
         holder.active.setText(active);
         holder.confirmed.setText(confirmed);
         holder.recovered.setText(recovered);
         holder.deaths.setText(deaths);
+
+        holder.dconfirmed.setText("+" +delta_confirm);
+        holder.dactive.setText("+" +delta_active);
+        holder.drecovered.setText("+" +delta_recover);
+        holder.ddeaths.setText("+" +delta_death);
     }
     @Override
     public int getItemCount() {
@@ -58,6 +64,11 @@ public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAd
             active = view.findViewById(R.id.text_view_state_active);
             recovered = view.findViewById(R.id.text_view_state_recovered);
             deaths = view.findViewById(R.id.text_view_state_deceased);
+
+            dconfirmed = view.findViewById(R.id.text_view_state_dconfirmed);
+            dactive = view.findViewById(R.id.text_view_state_dactive);
+            drecovered  = view.findViewById(R.id.text_view_state_drecovered);
+            ddeaths = view.findViewById(R.id.text_view_state_ddeaths);
         }
     }
     public StatewiseEntryAdapter(List<StatewiseEntry> entries) {

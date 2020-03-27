@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Who are you?"
+                    android:fontFamily="@font/circular_std_black"
                     android:textColor="@color/colorBlack"
                     android:textSize="20sp"
                     />
@@ -42,6 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textSize="16sp"
+                    android:fontFamily="@font/circular_std_book"
                     android:text="We are a group of dedicated volunteers who are curating the news coming from state bulletins, press releases and news houses. We extract the details, like patient relationship to other patient (to identify local and community transmissions), travel history and status. We never collect or expose any personally identifiable data regarding the patients."
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"

@@ -35,16 +35,22 @@ import java.util.Objects;
 
 public class FAQsFragment extends Fragment {
 
+    private String TAG = FAQsFragment.class.getSimpleName();
     private ArrayList<FAQuestion> faqs;
     private RecyclerView faqList;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private TextView noFAQs;
 
+    public void setFaqs(ArrayList<FAQuestion> faqs) {
+        this.faqs = faqs;
+    }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().findViewById(R.id.fab).setVisibility(View.INVISIBLE);
         return inflater.inflate(R.layout.fragment_faqs, container, false);
     }
 
@@ -58,8 +64,27 @@ public class FAQsFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         faqList.setLayoutManager(mLayoutManager);
 
-        GetFAQs getFAQs = new GetFAQs(getActivity(), (AppCompatActivity) getActivity());
-        getFAQs.execute();
+
+        faqs.add(new FAQuestion("1", "Are you official?", "No"));
+        faqs.add(new FAQuestion("2", "Then who are you?", "We are a group of dedicated volunteers who want to give update regarding COVID-19 cases in India at your fingertips."));
+        faqs.add(new FAQuestion("3", "How is the data gathered for this project?", "We are taking data from covid19india.org tracker, and they collect the details from state press releases, official government links and reputable news channels as source." +
+                " Data is validated by a group of volunteers and published into a Google sheet and an API, which is available for all."));
+//        GetFAQs getFAQs = new GetFAQs(getActivity(), (AppCompatActivity) getActivity());
+//        getFAQs.execute();
+        Log.e(TAG, "faqs: "+faqs.size());
+
+        if(faqs.size() > 0){
+            if(faqs.size()>0) {
+                faqList.setVisibility(View.VISIBLE);
+                Log.e(TAG, "faq 1: "+faqs.get(1).getQuestion());
+                mAdapter = new FAQAdapter(faqs);
+                faqList.setAdapter(mAdapter);
+                noFAQs.setVisibility(View.GONE);
+            }else{
+                faqList.setVisibility(View.GONE);
+                noFAQs.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     public class GetFAQs extends AsyncTask<Void, Context, ArrayList<FAQuestion>> {
@@ -139,17 +164,6 @@ public class FAQsFragment extends Fragment {
              * Updating parsed JSON data into ListView
              * */
             Log.e(TAG, "list size in post execute: "+ list.size());
-            if(list.size() > 0){
-                if(list.size()>0) {
-                    faqList.setVisibility(View.VISIBLE);
-                    mAdapter = new FAQAdapter(list);
-                    faqList.setAdapter(mAdapter);
-                    noFAQs.setVisibility(View.GONE);
-                }else{
-                    faqList.setVisibility(View.GONE);
-                    noFAQs.setVisibility(View.VISIBLE);
-                }
-            }
         }
 
 

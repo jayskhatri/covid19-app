@@ -53,6 +53,7 @@ public class SelfTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_self_test);
 
         getSupportActionBar().setTitle("Self Test");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         testQueImage = findViewById(R.id.image_view_test);
         question = findViewById(R.id.text_view_question);
         ans = findViewById(R.id.text_view_ans);
@@ -66,11 +67,11 @@ public class SelfTestActivity extends AppCompatActivity {
 
     private void addScore(int currentPos){
         try {
-            if (currentPos < 12) {
+            if (currentPos < 11) {
                 Log.e(TAG, "addScore: " + currentPos);
                 totalScore += scorelist[currentPos];
                 nextQuestion(currentPos);
-            } else if (currentPos == 12) {
+            } else if (currentPos == 11) {
                 Intent i = new Intent(SelfTestActivity.this, AdviceActivity.class);
                 i.putExtra("TOTAL_SCORE", totalScore);
                 startActivity(i);
@@ -83,13 +84,13 @@ public class SelfTestActivity extends AppCompatActivity {
 
     public void nextQuestion(int currentPos){
         try {
-            if (currentPos < 12) {
+            if (currentPos < 11) {
                 Log.e(TAG, "nextQuestion: currentPos: " + currentPos);
                 currentQue = currentPos + 1;
                 testQueImage.setImageResource(queImageList[currentQue]);
                 question.setText(queList[currentQue]);
                 Log.e(TAG, "total Score: " + totalScore);
-            } else if (currentPos == 12) {
+            } else if (currentPos == 11) {
                 Intent i = new Intent(SelfTestActivity.this, AdviceActivity.class);
                 i.putExtra("TOTAL_SCORE", totalScore);
                 startActivity(i);
@@ -99,5 +100,10 @@ public class SelfTestActivity extends AppCompatActivity {
             Log.e(TAG, "nextQuestion: " + e.getMessage());
         }
 
+    }
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 }

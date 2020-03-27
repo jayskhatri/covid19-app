@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.jayskhatri.covid19_track.R;
 
@@ -19,12 +20,13 @@ import java.util.Objects;
 public class HelpLineFragment extends Fragment {
 
     final private String TAG = HelpLineFragment.class.getSimpleName();
-    private CardView callHelpline, callTollFree, mailToHelp, whatsappHelp;
+    private Button callHelpline, callTollFree, mailToHelp, whatsappHelp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().findViewById(R.id.fab).setVisibility(View.INVISIBLE);
         return inflater.inflate(R.layout.fragment_help_line, container, false);
     }
 
@@ -32,10 +34,10 @@ public class HelpLineFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        callHelpline = (CardView) Objects.requireNonNull(getActivity()).findViewById(R.id.card_view_call_helpline);
-        callTollFree = (CardView) getActivity().findViewById(R.id.card_view_call_toll_free);
-        mailToHelp = (CardView) getActivity().findViewById(R.id.card_view_mail);
-        whatsappHelp = (CardView) getActivity().findViewById(R.id.card_view_whatsapp_help);
+        callHelpline = (Button) Objects.requireNonNull(getActivity()).findViewById(R.id.btn_call_helpline);
+        callTollFree = (Button) getActivity().findViewById(R.id.btn_call_toll_free);
+        mailToHelp = (Button) getActivity().findViewById(R.id.btn_mail);
+        whatsappHelp = (Button) getActivity().findViewById(R.id.btn_whatsapp_help);
 
         callHelpline.setOnClickListener(view -> callHelp("+911123978046"));
 

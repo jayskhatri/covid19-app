@@ -1,6 +1,7 @@
 package com.jayskhatri.covid19_track.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
+import com.jayskhatri.covid19_track.MainActivity;
 import com.jayskhatri.covid19_track.R;
+import com.jayskhatri.covid19_track.SelfTestActivity;
 import com.jayskhatri.covid19_track.api.HttpHandler;
 import com.jayskhatri.covid19_track.object.StatewiseEntry;
 
@@ -35,9 +38,15 @@ public class HomeFragment extends Fragment {
     private TextView totalActiveCount;
     private TextView totalDeathCount;
     private String TAG = HomeFragment.class.getSimpleName();
-    private Button statewiseReport;
+    private Button symptomchecker;
 
     public HomeFragment() {
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+//        getActivity().findViewById(R.id.fab).setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -55,7 +64,11 @@ public class HomeFragment extends Fragment {
         totalConfirmedCount = (TextView) getActivity().findViewById(R.id.text_view_confirmed_count);
         totalRecoveredCount = (TextView) getActivity().findViewById(R.id.text_view_recovered_count);
         totalDeathCount  = (TextView) getActivity().findViewById(R.id.text_view_deceased_count);
-//        statewiseReport = (Button) getActivity().findViewById(R.id.btn_statewise_entries);
+        symptomchecker = (Button) getActivity().findViewById(R.id.btn_symptom_checker);
+        symptomchecker.setOnClickListener(view -> {
+            Intent i = new Intent(getActivity(), SelfTestActivity.class);
+            startActivity(i);
+        });
 
 
         GetStateWiseData obj = new GetStateWiseData(getActivity(), (AppCompatActivity) getActivity());
@@ -173,8 +186,6 @@ public class HomeFragment extends Fragment {
             return processDialog;
         }
     }
-
-
 
     private boolean loadFragment(Fragment fragment) {
         //switching fragment

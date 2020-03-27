@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ import java.util.Objects;
 
 public class ShareFragment extends Fragment {
 
-    private CardView whatsappShare;
+    private Button whatsappShare;
     private TextView otherOptions;
     private String shareMessage = "Hey I have been using this app for getting updates regarding covid19 in India, Download the application now.\n\n" + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
 
@@ -32,6 +33,7 @@ public class ShareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().findViewById(R.id.fab).setVisibility(View.INVISIBLE);
         return inflater.inflate(R.layout.fragment_share, container, false);
     }
 
@@ -39,7 +41,7 @@ public class ShareFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        whatsappShare = (CardView) getActivity().findViewById(R.id.card_view_share_on_whatsapp);
+        whatsappShare = (Button) getActivity().findViewById(R.id.btn_share_on_whatsapp);
         otherOptions = (TextView) getActivity().findViewById(R.id.text_view_other_options);
 
         whatsappShare.setOnClickListener(this::onClickWhatsApp);

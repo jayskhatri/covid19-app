@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.StatewiseFragment">
+    tools:context=".ui.home.StatewiseFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp"
+        android:id="@+id/text_view_state_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:layout_gravity="center_horizontal"
+        android:text="Source : covid19india.org"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="2dp"
         android:id="@+id/recycler_view_statewise_list"/>
 
@@ -22,4 +34,4 @@
         android:visibility="gone"
         android:text="Error in loading Statewise Entry" />
 
-</FrameLayout>
+</LinearLayout>

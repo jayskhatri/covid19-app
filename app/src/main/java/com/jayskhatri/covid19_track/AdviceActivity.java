@@ -16,12 +16,15 @@ public class AdviceActivity extends AppCompatActivity {
     private int totalScore;
     private TextView advice;
     private Button callHelp, goBack;
+    private int[] adviceImageList = new int[]{
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
-//        Objects.requireNonNull(getSupportActionBar()).setTitle("Advise");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Advise");
 
         advice = findViewById(R.id.text_view_advise);
         goBack = findViewById(R.id.btn_go_back);
@@ -32,7 +35,10 @@ public class AdviceActivity extends AppCompatActivity {
     }
 
     private void init(int total){
-        if(total>=0 && total <=2){
+        if (total ==0){
+            advice.setText(R.string.advice_zero);
+        }
+        else if(total>=1 && total <=2){
             advice.setText(R.string.advice_two);
         }
         else if(total>=3 && total<=5){

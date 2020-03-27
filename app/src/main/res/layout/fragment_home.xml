@@ -6,36 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_view_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Covid-19"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/linear_layout_counts_view"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:textColor="@color/colorBlack"
-        android:textSize="38sp"/>
+<!--    <TextView-->
+<!--        android:id="@+id/text_view_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Covid-19"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/linear_layout_counts_view"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:textColor="@color/colorBlack"-->
+<!--        android:textSize="38sp"/>-->
     <!--Group of counts-->
     <LinearLayout
         android:id="@+id/linear_layout_counts_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/rounded_corner_maroon"
-        app:layout_constraintTop_toBottomOf="@id/text_view_title"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="India"
-            android:textSize="38sp"
-            android:textColor="@color/colorWhite"
+            android:text="COVID-19 India Cases"
+            android:textSize="22sp"
+            android:fontFamily="@font/circular_std_black"
+            android:textColor="@color/colorBlack"
             android:layout_gravity="center_horizontal"/>
         <!--    1st row-->
         <LinearLayout
@@ -61,8 +62,10 @@
                         android:id="@+id/text_view_confirmed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorRed"
                         android:layout_centerHorizontal="true"
                         android:text="@string/case_status_confirmed"
+                        android:fontFamily="@font/circular_std_book"
                         android:textSize="22sp" />
 
                     <TextView
@@ -73,8 +76,9 @@
                         android:layout_centerHorizontal="true"
                         android:text="-"
                         android:textSize="32sp"
+                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
-                        android:textColor="@color/colorBlack" />
+                        android:textColor="@color/colorRed" />
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
@@ -93,8 +97,10 @@
                         android:id="@+id/text_view_active"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlue"
                         android:layout_centerHorizontal="true"
                         android:text="@string/case_status_active"
+                        android:fontFamily="@font/circular_std_book"
                         android:textSize="22sp" />
 
                     <TextView
@@ -104,9 +110,10 @@
                         android:layout_below="@+id/text_view_active"
                         android:layout_centerHorizontal="true"
                         android:text="-"
+                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
                         android:textSize="32sp"
-                        android:textColor="@color/colorBlack" />
+                        android:textColor="@color/colorBlue" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
@@ -135,6 +142,8 @@
                         android:id="@+id/text_view_recovered"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorGreen"
+                        android:fontFamily="@font/circular_std_book"
                         android:layout_centerHorizontal="true"
                         android:text="@string/case_status_recovered"
                         android:textSize="22sp" />
@@ -146,9 +155,10 @@
                         android:layout_below="@+id/text_view_recovered"
                         android:layout_centerHorizontal="true"
                         android:text="-"
+                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
                         android:textSize="32sp"
-                        android:textColor="@color/colorBlack" />
+                        android:textColor="@color/colorGreen" />
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
@@ -168,6 +178,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="@string/case_status_deceased"
+                        android:fontFamily="@font/circular_std_book"
+                        android:textColor="@color/colorDarkGrey"
                         android:textSize="22sp" />
 
                     <TextView
@@ -177,14 +189,30 @@
                         android:layout_below="@+id/text_view_deceased"
                         android:layout_centerHorizontal="true"
                         android:text="-"
+                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
                         android:textSize="32sp"
-                        android:textColor="@color/colorBlack" />
+                        android:textColor="@color/colorDarkGrey" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_symptom_checker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Try our Symptoms test"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout_counts_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="?attr/borderlessButtonStyle"
+        />
 
 <!--    <Button-->
 <!--        android:id="@+id/btn_statewise_entries"-->

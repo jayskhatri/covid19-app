@@ -40,7 +40,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:textColor="@color/colorBlack"
-        android:text="Made with ❤ in India"
+        android:fontFamily="@font/circular_std_medium"
+        android:text="Stay Home, Stay Safe"
         android:gravity="bottom"
         android:layout_gravity="bottom"/>
 

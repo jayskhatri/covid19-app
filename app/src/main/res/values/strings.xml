@@ -5,7 +5,7 @@
     <!--    <string name="nav_header_title">Android Studio</string>-->
     <!--    <string name="nav_header_subtitle">android.studio@android.com</string>-->
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_report_case">Report a Case</string>
+    <string name="action_report_case">Report a new case</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_helpline">Helpline</string>
@@ -29,6 +29,7 @@
 
     <!--    test activity-->
     <string name="image_ref">www.dreamstime.com</string>
+    <string name="test_instruction">Please answer the question to the best of \nyour knowledge</string>
     <!--    questions for self test-->
     <string name="q1">Do you have cough?</string>
     <string name="q2">Do you have colds?</string>
@@ -44,8 +45,19 @@
     <string name="q12">Do you have direct contact or is taking care of positive COVID-19 patient?</string>
 
 <!--advice-->
-    <string name="advice_two">It is Due to stress, Observe your symptoms for sometime</string>
-    <string name="advice_five">Hydrate properly and proper personal hygiene</string>
-    <string name="advice_twelve">Seek a Consultation with doctor</string>
-    <string name="advice_twenty_four">Call the helpline urgent</string>
+    <string name="advice_zero">You are good at health. Stay Home, Stay Safe.</string>
+    <string name="advice_two">It is Due to stress, Observe your symptoms and take test again after some days.</string>
+    <string name="advice_five">Hydrate properly and proper personal hygiene.</string>
+    <string name="advice_twelve">Seek a Consultation with doctor.</string>
+    <string name="advice_twenty_four">Call the helpline urgent.</string>
+
+    <!--FAQs-->
+    <string name="faq_q1">Are you official?</string>
+    <string name="faq_q2">Then who are you?</string>
+    <string name="faq_q3">How is the data gathered for this project?</string>
+
+    <string name="faq_a1">No</string>
+    <string name="faq_a2">We are a group of dedicated volunteers who want to give update regarding COVID-19 cases in India at your fingertips.</string>
+    <string name="faq_a3">We are taking data from covid19india.org tracker, and they collect the details from state press releases, official government links and reputable news channels as source.
+        Data is validated by a group of volunteers and published into a Google sheet and an API, which is available for all.</string>
 </resources>
