@@ -44,10 +44,10 @@ public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAd
         holder.recovered.setText(recovered);
         holder.deaths.setText(deaths);
 
-        holder.dconfirmed.setText("+" +delta_confirm);
-        holder.dactive.setText("+" +delta_active);
-        holder.drecovered.setText("+" +delta_recover);
-        holder.ddeaths.setText("+" +delta_death);
+        holder.dconfirmed.setText(delta_confirm);
+        holder.dactive.setText(delta_active);
+        holder.drecovered.setText(delta_recover);
+        holder.ddeaths.setText(delta_death);
     }
     @Override
     public int getItemCount() {

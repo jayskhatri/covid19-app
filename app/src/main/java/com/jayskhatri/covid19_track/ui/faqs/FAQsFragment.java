@@ -88,7 +88,7 @@ public class FAQsFragment extends Fragment {
     }
 
     public class GetFAQs extends AsyncTask<Void, Context, ArrayList<FAQuestion>> {
-        final private String TAG = HomeFragment.GetStateWiseData.class.getSimpleName();
+        final private String TAG = GetFAQs.class.getSimpleName();
 
         private AlertDialog processDialog;
         private Context context;

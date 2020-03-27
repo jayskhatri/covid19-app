@@ -76,7 +76,7 @@ public class StatewiseEntry {
     }
 
     public String getDelta_active() {
-        return delta_active;
+        return "+" +delta_active;
     }
 
     public void setDelta_active(String delta_active) {
@@ -84,7 +84,7 @@ public class StatewiseEntry {
     }
 
     public String getDelta_confirmed() {
-        return delta_confirmed;
+        return "+" + delta_confirmed;
     }
 
     public void setDelta_confirmed(String delta_confirmed) {
@@ -92,7 +92,7 @@ public class StatewiseEntry {
     }
 
     public String getDelta_recovered() {
-        return delta_recovered;
+        return "+" +delta_recovered;
     }
 
     public void setDelta_recovered(String delta_recovered) {
@@ -100,7 +100,7 @@ public class StatewiseEntry {
     }
 
     public String getDelta_deceased() {
-        return delta_deceased;
+        return "+" +delta_deceased;
     }
 
     public void setDelta_deceased(String delta_deceased) {

@@ -78,7 +78,6 @@
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/colorRed"
                     android:textSize="22sp"
-                    android:layout_marginStart="3dp"
                     android:fontFamily="@font/circular_std_book"
                     android:text="43"/>
                 <TextView
@@ -88,6 +87,7 @@
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/colorRed"
                     android:textSize="13sp"
+                    android:layout_marginStart="3dp"
                     android:fontFamily="@font/circular_std_book"
                     android:text="(+4)"/>
             </LinearLayout>

@@ -17,11 +17,10 @@
     <string name="menu_feedback">Feedback</string>
     <string name="menu_statewise_cases">Statewise Cases</string>
 
-    <string name="home_second">Home Second</string>
     <string name="case_status_confirmed">Confirmed</string>
     <string name="case_status_active">"   Active   "</string>
     <string name="case_status_recovered">Recovered</string>
-    <string name="case_status_deceased">Deceased</string>
+    <string name="case_status_deceased">Deaths</string>
 
     <!-- dialogue-->
     <string name="text_view_loading">Loading...</string>

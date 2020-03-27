@@ -68,7 +68,7 @@ public class StatewiseFragment extends Fragment {
     }
 
     public class GetStateWiseData extends AsyncTask<Void, Context, ArrayList<StatewiseEntry>> {
-        final private String TAG = HomeFragment.GetStateWiseData.class.getSimpleName();
+        final private String TAG = GetStateWiseData.class.getSimpleName();
 
         private AlertDialog processDialog;
         private Context context;

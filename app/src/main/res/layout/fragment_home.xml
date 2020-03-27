@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-<!--    <TextView-->
-<!--        android:id="@+id/text_view_title"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Covid-19"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:layout_marginBottom="8dp"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/linear_layout_counts_view"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        android:textColor="@color/colorBlack"-->
-<!--        android:textSize="38sp"/>-->
     <!--Group of counts-->
     <LinearLayout
         android:id="@+id/linear_layout_counts_view"
@@ -38,6 +25,56 @@
             android:fontFamily="@font/circular_std_black"
             android:textColor="@color/colorBlack"
             android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/text_view_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/circular_std_book"
+            android:text="Source : covid19india.org"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="14sp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/text_view_updated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/circular_std_book"
+                android:text="Updated "/>
+
+            <TextView
+                android:textSize="14sp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/text_view_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/circular_std_book"
+                android:text="1"/>
+            <TextView
+                android:textSize="14sp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/text_view_ago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/circular_std_book"
+                android:text="hour ago"/>
+        </LinearLayout>
         <!--    1st row-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,17 +105,32 @@
                         android:fontFamily="@font/circular_std_book"
                         android:textSize="22sp" />
 
-                    <TextView
-                        android:id="@+id/text_view_confirmed_count"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_view_confirmed"
-                        android:layout_centerHorizontal="true"
-                        android:text="-"
-                        android:textSize="32sp"
-                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
-                        android:textColor="@color/colorRed" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/text_view_confirmed_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorRed"
+                            android:textSize="32sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="-"/>
+                        <TextView
+                            android:id="@+id/text_view_dconfirmed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorRed"
+                            android:textSize="19sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="(+4)"/>
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
@@ -103,17 +155,32 @@
                         android:fontFamily="@font/circular_std_book"
                         android:textSize="22sp" />
 
-                    <TextView
-                        android:id="@+id/text_view_active_count"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_view_active"
-                        android:layout_centerHorizontal="true"
-                        android:text="-"
-                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="32sp"
-                        android:textColor="@color/colorBlue" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/text_view_active_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="32sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="32"/>
+                        <TextView
+                            android:id="@+id/text_view_dactive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="19sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="(+3)"/>
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
@@ -148,17 +215,31 @@
                         android:text="@string/case_status_recovered"
                         android:textSize="22sp" />
 
-                    <TextView
-                        android:id="@+id/text_view_recovered_count"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_view_recovered"
-                        android:layout_centerHorizontal="true"
-                        android:text="-"
-                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="32sp"
-                        android:textColor="@color/colorGreen" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/text_view_recovered_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="32sp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="21"/>
+                        <TextView
+                            android:id="@+id/text_view_drecovered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="19sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="(+1)"/>
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
@@ -182,17 +263,32 @@
                         android:textColor="@color/colorDarkGrey"
                         android:textSize="22sp" />
 
-                    <TextView
-                        android:id="@+id/text_view_deceased_count"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_view_deceased"
-                        android:layout_centerHorizontal="true"
-                        android:text="-"
-                        android:fontFamily="@font/circular_std_medium"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="32sp"
-                        android:textColor="@color/colorDarkGrey" />
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/text_view_deceased_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="32sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="12"/>
+                        <TextView
+                            android:id="@+id/text_view_ddeaths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorDarkGrey"
+                            android:textSize="19sp"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/circular_std_book"
+                            android:text="(+3)"/>
+                    </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

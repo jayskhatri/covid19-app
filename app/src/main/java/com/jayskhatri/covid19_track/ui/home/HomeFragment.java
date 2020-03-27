@@ -28,15 +28,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
-    private TextView totalConfirmedCount;
-    private TextView totalRecoveredCount;
-    private TextView totalActiveCount;
-    private TextView totalDeathCount;
+    private TextView totalConfirmedCount, delta_confirm;
+    private TextView totalRecoveredCount, delta_recover;
+    private TextView totalActiveCount, delta_active;
+    private TextView totalDeathCount, delta_deaths;
+    private TextView hourView;
     private String TAG = HomeFragment.class.getSimpleName();
     private Button symptomchecker;
 
@@ -64,6 +69,14 @@ public class HomeFragment extends Fragment {
         totalConfirmedCount = (TextView) getActivity().findViewById(R.id.text_view_confirmed_count);
         totalRecoveredCount = (TextView) getActivity().findViewById(R.id.text_view_recovered_count);
         totalDeathCount  = (TextView) getActivity().findViewById(R.id.text_view_deceased_count);
+
+        hourView = (TextView) getActivity().findViewById(R.id.text_view_hour);
+
+        delta_active = (TextView) getActivity().findViewById(R.id.text_view_dactive);
+        delta_recover =  (TextView) getActivity().findViewById(R.id.text_view_drecovered);
+        delta_confirm = (TextView) getActivity().findViewById(R.id.text_view_dconfirmed);
+        delta_deaths = (TextView) getActivity().findViewById(R.id.text_view_ddeaths);
+
         symptomchecker = (Button) getActivity().findViewById(R.id.btn_symptom_checker);
         symptomchecker.setOnClickListener(view -> {
             Intent i = new Intent(getActivity(), SelfTestActivity.class);
@@ -71,12 +84,12 @@ public class HomeFragment extends Fragment {
         });
 
 
-        GetStateWiseData obj = new GetStateWiseData(getActivity(), (AppCompatActivity) getActivity());
+        GetKeyValues obj = new GetKeyValues(getActivity(), (AppCompatActivity) getActivity());
         obj.execute();
     }
 
-    public class GetStateWiseData extends AsyncTask<Void, Context, ArrayList<StatewiseEntry>> {
-        final private String TAG = GetStateWiseData.class.getSimpleName();
+    public class GetKeyValues extends AsyncTask<Void, Context, ArrayList<StatewiseEntry>> {
+        final private String TAG = GetKeyValues.class.getSimpleName();
 
         private AlertDialog processDialog;
         private Context context;
@@ -84,7 +97,7 @@ public class HomeFragment extends Fragment {
 
         private String url = "https://api.covid19india.org/data.json";
 
-        public GetStateWiseData(Context context, AppCompatActivity activity) {
+        public GetKeyValues(Context context, AppCompatActivity activity) {
             this.context = (Context) context;
             this.activity = activity;
         }
@@ -125,6 +138,7 @@ public class HomeFragment extends Fragment {
         */
             if (jsonStr != null) {
                 try {
+                    String active, confirmed, deaths, recovered, state, lastUpdatedTime; //delta_active, delta_confirmed, delta_recovered, delta_deaths;
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
@@ -133,13 +147,13 @@ public class HomeFragment extends Fragment {
                     for (int i = 0; i < stateentries.length(); i++) {
                         JSONObject c = stateentries.getJSONObject(i);
 
-                        String active = c.getString("active");
-                        String confirmed = c.getString("confirmed");
-                        String deaths = c.getString("deaths");
-                        String recovered = c.getString("recovered");
-                        String state = c.getString("state");
-                        String lastUpdatedTime = c.getString("lastupdatedtime");
-                        Log.e(TAG, "active: " + active + "in state: " + state + "\n");
+                        deaths = c.getString("deaths");
+                        active = c.getString("active");
+                        confirmed = c.getString("confirmed");
+                        recovered = c.getString("recovered");
+                        state = c.getString("state");
+                        lastUpdatedTime = c.getString("lastupdatedtime");
+//                        Log.e(TAG, "active: " + active + "in state: " + state + "\n");
                         // Delta node is JSON Object
                         JSONObject delta = c.getJSONObject("delta");
                         String delta_active = delta.getString("active");
@@ -174,6 +188,18 @@ public class HomeFragment extends Fragment {
                 totalConfirmedCount.setText(list.get(0).getConfirmed());
                 totalRecoveredCount.setText(list.get(0).getRecovered());
                 totalDeathCount.setText(list.get(0).getDeaths());
+
+                delta_active.setText(list.get(0).getDelta_active());
+                delta_confirm.setText(list.get(0).getDelta_confirmed());
+                delta_recover.setText(list.get(0).getDelta_recovered());
+                delta_deaths.setText(list.get(0).getDelta_deceased());
+
+                try {
+                    hourView.setText(getTimeDifference(list.get(0).getLastUpdatedTime()));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    hourView.setVisibility(View.INVISIBLE);
+                }
             }
         }
 
@@ -187,6 +213,19 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private String getTimeDifference(String date) throws ParseException {
+
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date date1 = format.parse(date);
+            Date current = Calendar.getInstance().getTime();
+            Log.e(TAG, "date1: " +date1.toString()+" date2: "+current.toString());
+            long mills = current.getTime() - date1.getTime();
+            Log.v("Data1", ""+date1.getTime());
+            Log.v("Data2", ""+current.getTime());
+            int hours = (int) (mills/(1000 * 60 * 60));
+//            int mins = (int) (mills/(1000*60)) % 60;
+            return String.valueOf(hours);
+    }
     private boolean loadFragment(Fragment fragment) {
         //switching fragment
         if (fragment != null) {
