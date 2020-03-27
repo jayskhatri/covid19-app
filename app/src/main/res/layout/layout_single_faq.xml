@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            &lt;!&ndash; Media &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="194dp"-->
+<!--                app:srcCompat="@drawable/media"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:contentDescription="@string/content_description_media"-->
+<!--                />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:id="@+id/text_view_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Who are you?"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/text_view_ans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:text="We are a group of dedicated volunteers who are curating the news coming from state bulletins, press releases and news houses. We extract the details, like patient relationship to other patient (to identify local and community transmissions), travel history and status. We never collect or expose any personally identifiable data regarding the patients."
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    android:text="@string/action_1"-->
+<!--                    style="?attr/borderlessButtonStyle"-->
+<!--                    />-->
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/action_2"-->
+<!--                    style="?attr/borderlessButtonStyle"-->
+<!--                    />-->
+<!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+</LinearLayout>

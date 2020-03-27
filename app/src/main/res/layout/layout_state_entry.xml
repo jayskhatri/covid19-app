@@ -9,7 +9,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_weight="2"
+        android:layout_weight="1.8"
         android:id="@+id/text_view_state_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,21 +19,24 @@
         android:text="GUJARAT"/>
 
     <LinearLayout
-        android:layout_weight="4"
+        android:layout_weight="4.2"
         android:weightSum="4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
         <LinearLayout
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/colorPrimary"
                 android:text="Confirmed"/>
             <TextView
@@ -48,27 +51,32 @@
                 android:text="43"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="Active"/>
             <TextView
                 android:id="@+id/text_view_state_active"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp"
                 android:layout_margin="5dp"
                 android:text="32"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -76,35 +84,39 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorGreen"
                 android:text="Recovered"/>
             <TextView
                 android:id="@+id/text_view_state_recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorGreen"
                 android:textSize="22sp"
                 android:layout_margin="5dp"
                 android:text="21"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/colorDarkGrey"
                 android:text="Deaths"/>
             <TextView
                 android:id="@+id/text_view_state_deceased"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="22sp"
                 android:layout_margin="5dp"

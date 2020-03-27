@@ -8,7 +8,12 @@ import android.webkit.WebView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
+import com.jayskhatri.covid19_track.adapter.TabPagerAdapter;
+import com.jayskhatri.covid19_track.ui.home.HomeFragment;
+import com.jayskhatri.covid19_track.ui.home.StatewiseFragment;
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,13 +21,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager2.widget.ViewPager2;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
     static final private String TAG = MainActivity.class.getSimpleName();
     private AppBarConfiguration mAppBarConfiguration;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_helpline, R.id.nav_awareness, R.id.nav_faqs, R.id.nav_report_new_case, R.id.nav_about, R.id.nav_share, R.id.nav_feedback)
+                R.id.nav_home, R.id.nav_helpline, R.id.nav_awareness, R.id.nav_faqs, R.id.nav_about, R.id.nav_share, R.id.nav_feedback)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

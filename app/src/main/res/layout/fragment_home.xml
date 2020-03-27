@@ -4,23 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.NationalFragment">
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_label_india" />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_label_statewise"/>
-    </com.google.android.material.tabs.TabLayout>
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/text_view_title"
@@ -28,15 +12,15 @@
         android:layout_height="wrap_content"
         android:text="Covid-19"
         android:gravity="center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/linear_layout_counts_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:textColor="@color/colorBlack"
         android:textSize="38sp"/>
-<!--Group of counts-->
+    <!--Group of counts-->
     <LinearLayout
         android:id="@+id/linear_layout_counts_view"
         android:layout_width="match_parent"
@@ -54,7 +38,7 @@
             android:textSize="38sp"
             android:textColor="@color/colorWhite"
             android:layout_gravity="center_horizontal"/>
-<!--    1st row-->
+        <!--    1st row-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,7 +111,7 @@
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
-<!--    2nd row-->
+        <!--    2nd row-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -203,26 +187,19 @@
 
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_state_wise_report"
+    <Button
+        android:id="@+id/btn_statewise_entries"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/colorGrey"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:text="See Statewise Report"
+        android:textSize="21sp"
+        android:textColor="@color/colorPrimary"
+        android:elevation="8dp"
         app:layout_constraintTop_toBottomOf="@id/linear_layout_counts_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        style="@style/Widget.AppCompat.Button.Borderless"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="See statewise report"
-            android:textSize="28sp"
-            android:layout_gravity="center"/>
-
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

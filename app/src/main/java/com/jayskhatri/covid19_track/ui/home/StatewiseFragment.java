@@ -12,6 +12,10 @@ import android.view.ViewGroup;
 import com.jayskhatri.covid19_track.R;
 
 public class StatewiseFragment extends Fragment {
+
+    public StatewiseFragment() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
