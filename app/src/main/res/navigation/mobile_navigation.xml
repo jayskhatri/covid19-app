@@ -22,20 +22,14 @@
         android:id="@+id/nav_awareness"
         android:name="com.jayskhatri.covid19_track.ui.corona_awareness.CovidAwarenessFragment"
         android:label="@string/menu_awareness"
-        tools:layout="@layout/fragment_corona_awareness" />
+        tools:layout="@layout/fragment_corona_awareness" >
+    </fragment>
 
     <fragment
         android:id="@+id/nav_faqs"
         android:name="com.jayskhatri.covid19_track.ui.faqs.FAQsFragment"
         android:label="@string/menu_faqs"
         tools:layout="@layout/fragment_faqs" />
-
-    <fragment
-        android:id="@+id/nav_report_new_case"
-        android:name="com.jayskhatri.covid19_track.ui.reportnewcase.ReportNewCaseFragment"
-        android:label="@string/menu_report_new_case"
-        tools:layout="@layout/fragment_report_new_case" >
-    </fragment>
 
     <fragment
         android:id="@+id/nav_about"
@@ -53,13 +47,8 @@
         android:label="@string/menu_feedback"
         tools:layout="@layout/fragment_feedback" />
     <fragment
-        android:id="@+id/nav_national"
-        android:name="com.jayskhatri.covid19_track.ui.home.NationalFragment"
-        android:label="NationalFragment"
-        tools:layout="@layout/fragment_national"/>
-    <fragment
         android:id="@+id/nav_statewise"
         android:name="com.jayskhatri.covid19_track.ui.home.StatewiseFragment"
-        android:label="fragment_statewise"
+        android:label="@string/menu_statewise_cases"
         tools:layout="@layout/fragment_statewise" />
 </navigation>

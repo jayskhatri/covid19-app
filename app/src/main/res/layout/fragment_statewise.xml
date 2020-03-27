@@ -5,11 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.StatewiseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="2dp"
+        android:id="@+id/recycler_view_statewise_list"/>
+
+    <TextView
+        android:id="@+id/text_view_no_statewise_entry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        android:visibility="gone"
+        android:text="Error in loading Statewise Entry" />
 
 </FrameLayout>

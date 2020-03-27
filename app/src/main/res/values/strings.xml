@@ -15,9 +15,7 @@
     <string name="menu_about">About</string>
     <string name="menu_share">Share</string>
     <string name="menu_feedback">Feedback</string>
-
-    <string name="tab_label_india">National</string>
-    <string name="tab_label_statewise">Statewise</string>
+    <string name="menu_statewise_cases">Statewise Cases</string>
 
     <string name="home_second">Home Second</string>
     <string name="case_status_confirmed">Confirmed</string>
@@ -29,6 +27,25 @@
     <string name="text_view_loading">Loading...</string>
     <string name="text_view_message">Be Patient, Good Things Take Time!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    test activity-->
+    <string name="image_ref">www.dreamstime.com</string>
+    <!--    questions for self test-->
+    <string name="q1">Do you have cough?</string>
+    <string name="q2">Do you have colds?</string>
+    <string name="q3">Are you having Diarrhea?</string>
+    <string name="q4">Do you have sore throat?</string>
+    <string name="q5">Are you experiencing MYALGIA or Body Aches?</string>
+    <string name="q6">Do you have a Headache?</string>
+    <string name="q7">Do you have Fever? (temperature 37.8 C and above)</string>
+    <string name="q8">Are you having difficulty breathing?</string>
+    <string name="q9">Are you experiencing Fatigue?</string>
+    <string name="q10">Have you travelled recently during the past 14 days?</string>
+    <string name="q11">Do you have a travel history to COVID-19 INFECTED AREA?</string>
+    <string name="q12">Do you have direct contact or is taking care of positive COVID-19 patient?</string>
+
+<!--advice-->
+    <string name="advice_two">It is Due to stress, Observe your symptoms for sometime</string>
+    <string name="advice_five">Hydrate properly and proper personal hygiene</string>
+    <string name="advice_twelve">Seek a Consultation with doctor</string>
+    <string name="advice_twenty_four">Call the helpline urgent</string>
 </resources>

@@ -1,7 +1,6 @@
 package com.jayskhatri.covid19_track.ui.home;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,15 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.android.material.navigation.NavigationView;
 import com.jayskhatri.covid19_track.R;
-import com.jayskhatri.covid19_track.adapter.TabPagerAdapter;
 import com.jayskhatri.covid19_track.api.HttpHandler;
 import com.jayskhatri.covid19_track.object.StatewiseEntry;
 
@@ -41,6 +34,7 @@ public class HomeFragment extends Fragment {
     private TextView totalRecoveredCount;
     private TextView totalActiveCount;
     private TextView totalDeathCount;
+    private String TAG = HomeFragment.class.getSimpleName();
     private Button statewiseReport;
 
     public HomeFragment() {
@@ -56,11 +50,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
         totalActiveCount = (TextView) Objects.requireNonNull(getActivity()).findViewById(R.id.text_view_active_count);
         totalConfirmedCount = (TextView) getActivity().findViewById(R.id.text_view_confirmed_count);
         totalRecoveredCount = (TextView) getActivity().findViewById(R.id.text_view_recovered_count);
         totalDeathCount  = (TextView) getActivity().findViewById(R.id.text_view_deceased_count);
-        statewiseReport = (Button) getActivity().findViewById(R.id.btn_statewise_entries);
+//        statewiseReport = (Button) getActivity().findViewById(R.id.btn_statewise_entries);
+
 
         GetStateWiseData obj = new GetStateWiseData(getActivity(), (AppCompatActivity) getActivity());
         obj.execute();
@@ -177,6 +173,7 @@ public class HomeFragment extends Fragment {
             return processDialog;
         }
     }
+
 
 
     private boolean loadFragment(Fragment fragment) {

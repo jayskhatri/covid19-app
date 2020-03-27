@@ -2,34 +2,36 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="130dp"
     android:background="@drawable/rounded_corner_light_grey"
     android:layout_margin="12dp"
-    android:weightSum="6"
-    android:orientation="horizontal">
+    android:weightSum="2"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_weight="1.8"
+        android:layout_weight="0.5"
         android:id="@+id/text_view_state_name"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
         android:textColor="@color/colorBlack"
         android:textSize="22sp"
         android:text="GUJARAT"/>
 
     <LinearLayout
-        android:layout_weight="4.2"
-        android:weightSum="4"
-        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="4"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_margin="2dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
@@ -43,18 +45,16 @@
                 android:id="@+id/text_view_state_confirmed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorPrimary"
                 android:textSize="22sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="5dp"
                 android:text="43"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_weight="1"
             android:layout_margin="2dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
@@ -71,14 +71,13 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp"
-                android:layout_margin="5dp"
                 android:text="32"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_weight="1"
             android:layout_margin="2dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
@@ -95,14 +94,13 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorGreen"
                 android:textSize="22sp"
-                android:layout_margin="5dp"
                 android:text="21"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_weight="1"
             android:layout_margin="2dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
@@ -119,7 +117,6 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="22sp"
-                android:layout_margin="5dp"
                 android:text="3"/>
         </LinearLayout>
     </LinearLayout>

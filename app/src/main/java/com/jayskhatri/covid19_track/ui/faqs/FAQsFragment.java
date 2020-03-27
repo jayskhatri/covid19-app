@@ -41,10 +41,6 @@ public class FAQsFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private TextView noFAQs;
 
-    public void setFaqs(ArrayList<FAQuestion> faqs) {
-        this.faqs = faqs;
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
