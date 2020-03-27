@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdviceActivity">
+    tools:context=".AdviseActivity">
 
     <TextView
         android:id="@+id/text_view_instruction"
@@ -29,11 +29,11 @@
 
         <!-- Media -->
         <ImageView
-            android:id="@+id/image_view_test"
+            android:id="@+id/image_view_ad_test"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
+            android:layout_height="210dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/direct12"
+
             />
 
         <!-- Title, secondary and supporting text -->

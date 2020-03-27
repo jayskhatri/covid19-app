@@ -72,7 +72,7 @@ public class SelfTestActivity extends AppCompatActivity {
                 totalScore += scorelist[currentPos];
                 nextQuestion(currentPos);
             } else if (currentPos == 11) {
-                Intent i = new Intent(SelfTestActivity.this, AdviceActivity.class);
+                Intent i = new Intent(SelfTestActivity.this, AdviseActivity.class);
                 i.putExtra("TOTAL_SCORE", totalScore);
                 startActivity(i);
                 finish();
@@ -91,7 +91,7 @@ public class SelfTestActivity extends AppCompatActivity {
                 question.setText(queList[currentQue]);
                 Log.e(TAG, "total Score: " + totalScore);
             } else if (currentPos == 11) {
-                Intent i = new Intent(SelfTestActivity.this, AdviceActivity.class);
+                Intent i = new Intent(SelfTestActivity.this, AdviseActivity.class);
                 i.putExtra("TOTAL_SCORE", totalScore);
                 startActivity(i);
                 finish();
