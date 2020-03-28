@@ -1,6 +1,7 @@
 package com.jayskhatri.covid19_track.ui.home;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import com.jayskhatri.covid19_track.api.HttpHandler;
 import com.jayskhatri.covid19_track.object.FAQuestion;
 import com.jayskhatri.covid19_track.object.StatewiseEntry;
 import com.jayskhatri.covid19_track.ui.faqs.FAQsFragment;
+import com.jayskhatri.covid19_track.utils.ConnectionDetector;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,9 +42,34 @@ public class StatewiseFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView.Adapter mAdapter;
     private TextView noEntry;
+    private ConnectionDetector connectionDetector;
 
 
     public StatewiseFragment() {
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(!connectionDetector.isInternetAvailble()){
+            //generating dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
+
+            // 2. Chain together various setter methods to set the dialog characteristics
+            builder.setMessage("Please turn your Internet on or connect to WIFI to know statistics.")
+                    .setTitle("No Internet Connection");
+
+            builder.setNeutralButton("OK", (dialogInterface, i) -> {
+
+            });
+
+            // 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
+            AlertDialog dialog = builder.create();
+            dialog.setOnShowListener(dialogInterface -> {
+                dialog.getButton(DialogInterface.BUTTON_NEUTRAL).setTextColor(getResources().getColor(R.color.colorPrimary));
+            });
+            dialog.show();
+        }
     }
 
     @Override
@@ -59,6 +87,8 @@ public class StatewiseFragment extends Fragment {
         stateentries = (RecyclerView) Objects.requireNonNull(getActivity()).findViewById(R.id.recycler_view_statewise_list);
         noEntry = (TextView) getActivity().findViewById(R.id.text_view_no_statewise_entry);
         entries = new ArrayList<StatewiseEntry>();
+
+        connectionDetector = new ConnectionDetector(getActivity());
 
         mLayoutManager = new LinearLayoutManager(getActivity());
         stateentries.setLayoutManager(mLayoutManager);
@@ -161,16 +191,15 @@ public class StatewiseFragment extends Fragment {
             /**
              * Updating parsed JSON data into ListView
              * */
+//            Log.e(TAG, "Statewise: " + list.size());
             if (list.size() > 0) {
-                if (list.size() > 0) {
-                    stateentries.setVisibility(View.VISIBLE);
-                    mAdapter = new StatewiseEntryAdapter(list);
-                    stateentries.setAdapter(mAdapter);
-                    noEntry.setVisibility(View.GONE);
-                } else {
-                    stateentries.setVisibility(View.GONE);
-                    noEntry.setVisibility(View.VISIBLE);
-                }
+                stateentries.setVisibility(View.VISIBLE);
+                mAdapter = new StatewiseEntryAdapter(list);
+                stateentries.setAdapter(mAdapter);
+                noEntry.setVisibility(View.GONE);
+            } else {
+                stateentries.setVisibility(View.GONE);
+                noEntry.setVisibility(View.VISIBLE);
             }
         }
 

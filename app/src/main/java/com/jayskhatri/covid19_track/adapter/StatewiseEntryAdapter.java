@@ -1,5 +1,6 @@
 package com.jayskhatri.covid19_track.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.jayskhatri.covid19_track.object.StatewiseEntry;
 import java.util.List;
 
 public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAdapter.MyViewHolder> {
+    private String TAG = StatewiseEntryAdapter.class.getSimpleName();
     private List<StatewiseEntry> entries;
 
     @NonNull
@@ -37,6 +39,8 @@ public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAd
         String delta_recover = entries.get(position).getDelta_recovered();
         String delta_death = entries.get(position).getDelta_deceased();
 
+        Log.e(TAG, "Namaste from state : "+state);
+//
         holder.state.setText(state);
 
         holder.active.setText(active);
@@ -44,10 +48,30 @@ public class StatewiseEntryAdapter extends RecyclerView.Adapter<StatewiseEntryAd
         holder.recovered.setText(recovered);
         holder.deaths.setText(deaths);
 
-        holder.dconfirmed.setText(delta_confirm);
-        holder.dactive.setText(delta_active);
-        holder.drecovered.setText(delta_recover);
-        holder.ddeaths.setText(delta_death);
+        if(delta_confirm.equals("+0")){
+            Log.e(TAG, "VISIBILITY set to 0 for confirm in state "+state);
+            holder.dconfirmed.setVisibility(View.GONE);
+        }else {
+            Log.e(TAG, "Delta value for confirm in state "+state + " delta: " + delta_confirm);
+            holder.dconfirmed.setText(delta_confirm);
+        }
+        if(delta_active.equals("+0")){
+            holder.dactive.setVisibility(View.GONE);
+        }else {
+            holder.dactive.setText(delta_active);
+        }
+
+        if(delta_recover.equals("+0")){
+            holder.drecovered.setVisibility(View.GONE);
+        }else {
+            holder.drecovered.setText(delta_recover);
+        }
+
+        if(delta_death.equals("+0")){
+            holder.ddeaths.setVisibility(View.GONE);
+        }else {
+            holder.ddeaths.setText(delta_death);
+        }
     }
     @Override
     public int getItemCount() {

@@ -64,16 +64,6 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/circular_std_book"
                 android:text="1"/>
-            <TextView
-                android:textSize="14sp"
-                android:layout_marginBottom="2dp"
-                android:id="@+id/text_view_ago"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlack"
-                android:layout_margin="4dp"
-                android:fontFamily="@font/circular_std_book"
-                android:text="hour ago"/>
         </LinearLayout>
         <!--    1st row-->
         <LinearLayout
@@ -129,7 +119,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="(+4)"/>
+                            android:text="+"/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -169,7 +159,7 @@
                             android:textSize="32sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="32"/>
+                            android:text="-"/>
                         <TextView
                             android:id="@+id/text_view_dactive"
                             android:layout_width="wrap_content"
@@ -179,7 +169,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="(+3)"/>
+                            android:text="+"/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -228,7 +218,7 @@
                             android:textColor="@color/colorGreen"
                             android:textSize="32sp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="21"/>
+                            android:text="-"/>
                         <TextView
                             android:id="@+id/text_view_drecovered"
                             android:layout_width="wrap_content"
@@ -238,7 +228,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="(+1)"/>
+                            android:text="+"/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -277,7 +267,7 @@
                             android:textSize="32sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="12"/>
+                            android:text="-"/>
                         <TextView
                             android:id="@+id/text_view_ddeaths"
                             android:layout_width="wrap_content"
@@ -287,7 +277,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="(+3)"/>
+                            android:text="+"/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -309,20 +299,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="?attr/borderlessButtonStyle"
         />
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_statewise_entries"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="See Statewise Report"-->
-<!--        android:textSize="21sp"-->
-<!--        android:textColor="@color/colorPrimary"-->
-<!--        android:elevation="8dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/linear_layout_counts_view"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        style="@style/Widget.AppCompat.Button.Borderless"-->
-<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

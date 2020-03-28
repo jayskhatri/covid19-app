@@ -79,7 +79,7 @@
                     android:textColor="@color/colorRed"
                     android:textSize="22sp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="43"/>
+                    android:text="-"/>
                 <TextView
                     android:id="@+id/text_view_state_dconfirmed"
                     android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                     android:textSize="13sp"
                     android:layout_marginStart="3dp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="(+4)"/>
+                    android:text="+"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -120,7 +120,7 @@
                     android:textColor="@color/colorBlue"
                     android:textSize="22sp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="32"/>
+                    android:text="-"/>
                 <TextView
                     android:id="@+id/text_view_state_dactive"
                     android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                     android:textSize="13sp"
                     android:layout_marginStart="3dp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="(+3)"/>
+                    android:text="+"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -161,7 +161,7 @@
                     android:textColor="@color/colorGreen"
                     android:textSize="22sp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="23"/>
+                    android:text="-"/>
                 <TextView
                     android:id="@+id/text_view_state_drecovered"
                     android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                     android:textSize="13sp"
                     android:layout_marginStart="3dp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="(+1)"/>
+                    android:text="+"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -202,7 +202,7 @@
                     android:textColor="@color/colorDarkGrey"
                     android:textSize="22sp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="10"/>
+                    android:text="-"/>
                 <TextView
                     android:id="@+id/text_view_state_ddeaths"
                     android:layout_width="wrap_content"
@@ -212,7 +212,7 @@
                     android:textColor="@color/colorDarkGrey"
                     android:textSize="13sp"
                     android:fontFamily="@font/circular_std_book"
-                    android:text="(+1)"/>
+                    android:text="+"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

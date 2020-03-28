@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.StatewiseFragment"
     android:orientation="vertical">
 
     <TextView
@@ -20,7 +21,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:id="@+id/recycler_view_statewise_list"/>
 
@@ -28,11 +29,14 @@
         android:id="@+id/text_view_no_statewise_entry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_gravity="center"
         android:gravity="center"
+        android:layout_margin="16dp"
         android:textColor="@color/colorPrimary"
         android:textSize="17sp"
         android:visibility="gone"
-        android:text="Error in loading Statewise Entry" />
+        android:fontFamily="@font/circular_std_medium"
+        android:text="Error in loading State wise Entry, Make sure you are connected with internet." />
 
 </LinearLayout>

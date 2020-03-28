@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">covid19-app</string>
+    <string name="app_name">COVID19 Updates</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!--    <string name="nav_header_title">Android Studio</string>-->
@@ -13,14 +13,14 @@
     <string name="menu_faqs">FAQs</string>
     <string name="menu_report_new_case">Report New Case</string>
     <string name="menu_about">About</string>
-    <string name="menu_share">Share</string>
+    <string name="menu_share">Tell a Friend</string>
     <string name="menu_feedback">Feedback</string>
-    <string name="menu_statewise_cases">Statewise Cases</string>
+    <string name="menu_statewise_cases">State wise Cases</string>
 
     <string name="case_status_confirmed">Confirmed</string>
     <string name="case_status_active">"   Active   "</string>
     <string name="case_status_recovered">Recovered</string>
-    <string name="case_status_deceased">Deaths</string>
+    <string name="case_status_deceased">"  Deaths  "</string>
 
     <!-- dialogue-->
     <string name="text_view_loading">Loading...</string>
@@ -43,7 +43,7 @@
     <string name="q11">Do you have a travel history to COVID-19 INFECTED AREA?</string>
     <string name="q12">Do you have direct contact or is taking care of positive COVID-19 patient?</string>
 
-<!--advice-->
+    <!--advice-->
     <string name="advice_zero">You are good at health. Stay Home, Stay Safe.</string>
     <string name="advice_two">It is Due to stress, Observe your symptoms and take test again after some days.</string>
     <string name="advice_five">Hydrate properly and proper personal hygiene.</string>

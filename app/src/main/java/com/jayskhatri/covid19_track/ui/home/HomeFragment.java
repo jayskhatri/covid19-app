@@ -1,6 +1,7 @@
 package com.jayskhatri.covid19_track.ui.home;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import com.jayskhatri.covid19_track.R;
 import com.jayskhatri.covid19_track.SelfTestActivity;
 import com.jayskhatri.covid19_track.api.HttpHandler;
 import com.jayskhatri.covid19_track.object.StatewiseEntry;
+import com.jayskhatri.covid19_track.utils.ConnectionDetector;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,14 +46,33 @@ public class HomeFragment extends Fragment {
     private TextView hourView;
     private String TAG = HomeFragment.class.getSimpleName();
     private Button symptomchecker;
+    private ConnectionDetector connectionDetector;
 
     public HomeFragment() {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-//        getActivity().findViewById(R.id.fab).setVisibility(View.VISIBLE);
+    public void onResume() {
+        super.onResume();
+        if(!connectionDetector.isInternetAvailble()){
+            //generating dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
+
+            // 2. Chain together various setter methods to set the dialog characteristics
+            builder.setMessage("Please turn your Internet on or connect to WIFI to statistics.")
+                    .setTitle("No Internet Connection");
+
+            builder.setNeutralButton("OK", (dialogInterface, i) -> {
+
+            });
+
+            // 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
+            AlertDialog dialog = builder.create();
+            dialog.setOnShowListener(dialogInterface -> {
+                dialog.getButton(DialogInterface.BUTTON_NEUTRAL).setTextColor(getResources().getColor(R.color.colorPrimary));
+            });
+            dialog.show();
+        }
     }
 
     @Override
@@ -64,11 +85,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
         totalActiveCount = (TextView) Objects.requireNonNull(getActivity()).findViewById(R.id.text_view_active_count);
         totalConfirmedCount = (TextView) getActivity().findViewById(R.id.text_view_confirmed_count);
         totalRecoveredCount = (TextView) getActivity().findViewById(R.id.text_view_recovered_count);
         totalDeathCount  = (TextView) getActivity().findViewById(R.id.text_view_deceased_count);
+        connectionDetector = new ConnectionDetector(getActivity());
 
         hourView = (TextView) getActivity().findViewById(R.id.text_view_hour);
 
@@ -223,8 +244,14 @@ public class HomeFragment extends Fragment {
             Log.v("Data1", ""+date1.getTime());
             Log.v("Data2", ""+current.getTime());
             int hours = (int) (mills/(1000 * 60 * 60));
-//            int mins = (int) (mills/(1000*60)) % 60;
-            return String.valueOf(hours);
+            int mins = (int) (mills/(1000*60)) % 60;
+
+            Log.e(TAG, "hours: "+hours + "  mins: "+mins);
+            if (hours==0) {
+                return mins + " minutes ago";
+            } else {
+                return hours + " hours ago";
+            }
     }
     private boolean loadFragment(Fragment fragment) {
         //switching fragment
