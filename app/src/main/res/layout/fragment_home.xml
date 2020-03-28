@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
@@ -284,6 +285,20 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        android:visibility="gone"
+        android:fontFamily="@font/circular_std_medium"
+        android:text="Error in loading State wise Entry, Make sure you are connected with internet." />
 
     <Button
         android:id="@+id/btn_symptom_checker"

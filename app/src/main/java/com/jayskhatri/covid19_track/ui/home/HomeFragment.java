@@ -10,12 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
@@ -44,9 +47,12 @@ public class HomeFragment extends Fragment {
     private TextView totalActiveCount, delta_active;
     private TextView totalDeathCount, delta_deaths;
     private TextView hourView;
+    private LinearLayout countView;
+    private TextView noInternet;
     private String TAG = HomeFragment.class.getSimpleName();
     private Button symptomchecker;
     private ConnectionDetector connectionDetector;
+    private ConstraintLayout constraintLayout;
 
     public HomeFragment() {
     }
@@ -56,6 +62,13 @@ public class HomeFragment extends Fragment {
         super.onResume();
         if(!connectionDetector.isInternetAvailble()){
             //generating dialog
+            ConstraintSet constraintSet = new ConstraintSet();
+            constraintSet.clone(constraintLayout);
+            constraintSet.connect(R.id.btn_symptom_checker, ConstraintSet.TOP,R.id.text_view_no_internet,ConstraintSet.BOTTOM,0);
+            constraintSet.applyTo(constraintLayout);
+            countView.setVisibility(View.GONE);
+            noInternet.setVisibility(View.VISIBLE);
+
             AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
 
             // 2. Chain together various setter methods to set the dialog characteristics
@@ -72,6 +85,10 @@ public class HomeFragment extends Fragment {
                 dialog.getButton(DialogInterface.BUTTON_NEUTRAL).setTextColor(getResources().getColor(R.color.colorPrimary));
             });
             dialog.show();
+        }
+        else {
+            countView.setVisibility(View.VISIBLE);
+            noInternet.setVisibility(View.GONE);
         }
     }
 
@@ -90,6 +107,9 @@ public class HomeFragment extends Fragment {
         totalRecoveredCount = (TextView) getActivity().findViewById(R.id.text_view_recovered_count);
         totalDeathCount  = (TextView) getActivity().findViewById(R.id.text_view_deceased_count);
         connectionDetector = new ConnectionDetector(getActivity());
+        countView = getActivity().findViewById(R.id.linear_layout_counts_view);
+        noInternet = getActivity().findViewById(R.id.text_view_no_internet);
+        constraintLayout = getActivity().findViewById(R.id.parent_constraint);
 
         hourView = (TextView) getActivity().findViewById(R.id.text_view_hour);
 
