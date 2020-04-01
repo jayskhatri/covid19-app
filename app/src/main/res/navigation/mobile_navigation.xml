@@ -7,48 +7,48 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.jayskhatri.covid19_track.ui.home.HomeFragment"
+        android:name="com.imperfect.covid19_track.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
     </fragment>
 
     <fragment
         android:id="@+id/nav_helpline"
-        android:name="com.jayskhatri.covid19_track.ui.helpline.HelpLineFragment"
+        android:name="com.imperfect.covid19_track.ui.helpline.HelpLineFragment"
         android:label="@string/menu_helpline"
         tools:layout="@layout/fragment_help_line" />
 
     <fragment
         android:id="@+id/nav_awareness"
-        android:name="com.jayskhatri.covid19_track.ui.corona_awareness.CovidAwarenessFragment"
+        android:name="com.imperfect.covid19_track.ui.corona_awareness.CovidAwarenessFragment"
         android:label="@string/menu_awareness"
         tools:layout="@layout/fragment_corona_awareness" >
     </fragment>
 
     <fragment
         android:id="@+id/nav_faqs"
-        android:name="com.jayskhatri.covid19_track.ui.faqs.FAQsFragment"
+        android:name="com.imperfect.covid19_track.ui.faqs.FAQsFragment"
         android:label="@string/menu_faqs"
         tools:layout="@layout/fragment_faqs" />
 
     <fragment
         android:id="@+id/nav_about"
-        android:name="com.jayskhatri.covid19_track.ui.about.AboutFragment"
+        android:name="com.imperfect.covid19_track.ui.about.AboutFragment"
         android:label=" "
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.jayskhatri.covid19_track.ui.share.ShareFragment"
+        android:name="com.imperfect.covid19_track.ui.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
     <fragment
         android:id="@+id/nav_feedback"
-        android:name="com.jayskhatri.covid19_track.ui.feedback.FeedbackFragment"
+        android:name="com.imperfect.covid19_track.ui.feedback.FeedbackFragment"
         android:label="@string/menu_feedback"
         tools:layout="@layout/fragment_feedback" />
     <fragment
         android:id="@+id/nav_statewise"
-        android:name="com.jayskhatri.covid19_track.ui.home.StatewiseFragment"
+        android:name="com.imperfect.covid19_track.ui.home.StatewiseFragment"
         android:label="@string/menu_statewise_cases"
         tools:layout="@layout/fragment_statewise" />
 </navigation>

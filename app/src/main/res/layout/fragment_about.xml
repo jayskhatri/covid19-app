@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/circular_std_book"
         app:layout_constraintTop_toBottomOf="@id/text_view_title_thanks"
-        android:text="Open Source Libraries"/>
+        android:text="Open Source Projects"/>
     <Button
         android:id="@+id/btn_covid19india"
         android:layout_width="match_parent"
@@ -89,23 +89,23 @@
         android:fontFamily="@font/circular_std_book"
         android:text="&#169; 2020 Jay Khatri. All Rights Reserved"/>
 
-    <Button
-        android:id="@+id/btn_mail_dev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Mail Developer"
-        android:elevation="10dp"
-        android:drawableStart="@drawable/ic_email_black"
-        android:drawablePadding="10dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="@font/circular_std_medium"
-        app:layout_constraintTop_toBottomOf="@id/btn_zoomage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="?attr/borderlessButtonStyle"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/btn_mail_dev"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="Mail Developer"-->
+<!--        android:elevation="10dp"-->
+<!--        android:drawableStart="@drawable/ic_email_black"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:textColor="@color/colorPrimary"-->
+<!--        android:fontFamily="@font/circular_std_medium"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/btn_zoomage"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        style="?attr/borderlessButtonStyle"-->
+<!--        />-->
 
     <WebView
         android:id="@+id/web_view_about"
