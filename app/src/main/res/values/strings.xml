@@ -59,4 +59,8 @@
     <string name="faq_a2">We are a group of dedicated volunteers who want to give update regarding COVID-19 cases in India at your fingertips.</string>
     <string name="faq_a3">We are taking data from covid19india.org tracker, and they collect the details from state press releases, official government links and reputable news channels as source.
         Data is validated by a group of volunteers and published into a Google sheet and an API, which is available for all.</string>
+
+    <string name="unit_b_a_d_id">ca-app-pub-2219286075154495/1153776055</string>
+    <string name="a_app_d_id">ca-app-pub-2219286075154495~5404205778</string>
+    <string name="test_a_d_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

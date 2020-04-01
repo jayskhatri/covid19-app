@@ -100,11 +100,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        ads:adSize="BANNER"
-        android:visibility="gone"
+        android:background="@color/colorWhite"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:adUnitId="ca-app-pub-2219286075154495/1153776055">
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/unit_b_a_d_id">
     </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,15 +70,7 @@ public class AdviseActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 showadd = value;
                 if(showadd !=null)
-                    if(showadd.equals("yes")){
-                        MobileAds.initialize(getApplicationContext(), initializationStatus -> {
-                        });
-                        mAdView.setVisibility(View.VISIBLE);
-                        AdRequest adRequest = new AdRequest.Builder().build();
-                        mAdView.loadAd(adRequest);
-                    }else{
-                        mAdView.setVisibility(View.GONE);
-                    }
+                    showAds(showadd);
 
 //                Log.d(TAG, "Value is: " + value);
             }
@@ -115,9 +107,48 @@ public class AdviseActivity extends AppCompatActivity {
             callHelp.setOnClickListener(view -> callHelp("104"));
         }
     }
+
     private void callHelp(String num){
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:"+num));
         startActivity(intent);
+    }
+
+    private void showAds(String showad){
+        if(showad.equals("yes")){
+            MobileAds.initialize(getApplicationContext(), initializationStatus -> {
+            });
+            mAdView.setVisibility(View.VISIBLE);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }else{
+            mAdView.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }

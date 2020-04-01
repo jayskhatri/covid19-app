@@ -10,8 +10,11 @@ import android.view.View;
 import android.webkit.WebView;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        //ads
+        MobileAds.initialize(this, initializationStatus -> {});
+        mAdView = findViewById(R.id.adView);
+
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference().child("ads");
         // Read from the database
@@ -75,15 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 showadd = value;
                 if(showadd !=null)
-                    if(showadd.equals("yes")){
-                        MobileAds.initialize(getApplicationContext(), initializationStatus -> {
-                        });
-                        mAdView.setVisibility(View.VISIBLE);
-                        AdRequest adRequest = new AdRequest.Builder().build();
-                        mAdView.loadAd(adRequest);
-                    }else{
-                        mAdView.setVisibility(View.GONE);
-                    }
+                    showAds(showadd);
 
                 Log.d(TAG, "Value is: " + value);
             }
@@ -94,9 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-
-        //ads
-        mAdView = findViewById(R.id.adView);
     }
 
     @Override
@@ -144,5 +140,41 @@ public class MainActivity extends AppCompatActivity {
                 alert11.show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showAds(String showad){
+        if(showad.equals("yes")){
+            mAdView.setVisibility(View.VISIBLE);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }else{
+            mAdView.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }

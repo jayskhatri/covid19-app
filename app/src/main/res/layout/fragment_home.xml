@@ -53,7 +53,7 @@
                 android:textColor="@color/colorBlack"
                 android:layout_margin="4dp"
                 android:fontFamily="@font/circular_std_book"
-                android:text="Updated "/>
+                android:text="Updated"/>
 
             <TextView
                 android:textSize="14sp"
@@ -64,7 +64,7 @@
                 android:textColor="@color/colorBlack"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/circular_std_book"
-                android:text="1"/>
+                android:text="sometime ago"/>
         </LinearLayout>
         <!--    1st row-->
         <LinearLayout
@@ -120,7 +120,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="+"/>
+                            android:text=""/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -170,7 +170,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="+"/>
+                            android:text=""/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -229,7 +229,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="+"/>
+                            android:text=""/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -278,7 +278,7 @@
                             android:textSize="19sp"
                             android:layout_marginStart="3dp"
                             android:fontFamily="@font/circular_std_book"
-                            android:text="+"/>
+                            android:text=""/>
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -298,7 +298,7 @@
         android:textSize="17sp"
         android:visibility="gone"
         android:fontFamily="@font/circular_std_medium"
-        android:text="Error in loading State wise Entry, Make sure you are connected with internet." />
+        android:text="Error in loading, Make sure you are connected with internet." />
 
     <Button
         android:id="@+id/btn_symptom_checker"

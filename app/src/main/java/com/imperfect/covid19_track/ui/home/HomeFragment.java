@@ -85,6 +85,8 @@ public class HomeFragment extends Fragment {
             dialog.show();
         }
         else {
+            GetKeyValues obj = new GetKeyValues(getActivity(), (AppCompatActivity) getActivity());
+            obj.execute();
             countView.setVisibility(View.VISIBLE);
             noInternet.setVisibility(View.GONE);
         }
@@ -121,10 +123,6 @@ public class HomeFragment extends Fragment {
             Intent i = new Intent(getActivity(), SelfTestActivity.class);
             startActivity(i);
         });
-
-
-        GetKeyValues obj = new GetKeyValues(getActivity(), (AppCompatActivity) getActivity());
-        obj.execute();
     }
 
     public class GetKeyValues extends AsyncTask<Void, Context, ArrayList<StatewiseEntry>> {
@@ -145,6 +143,7 @@ public class HomeFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             // Showing progress dialog
+            countView.setVisibility(View.INVISIBLE);
             processDialog = createDialog(context);
             processDialog.show();
         }
@@ -192,7 +191,7 @@ public class HomeFragment extends Fragment {
                         recovered = c.getString("recovered");
                         state = c.getString("state");
                         lastUpdatedTime = c.getString("lastupdatedtime");
-//                        Log.e(TAG, "active: " + active + "in state: " + state + "\n");
+                        Log.e(TAG, "active: " + active + "in state: " + state + "\n");
                         // Delta node is JSON Object
                         JSONObject delta = c.getJSONObject("delta");
                         String delta_active = delta.getString("active");
@@ -222,6 +221,8 @@ public class HomeFragment extends Fragment {
             /**
              * Updating parsed JSON data into ListView
              * */
+            countView.setVisibility(View.VISIBLE);
+            Log.e(TAG, "in post execute");
             if(list.size() > 0){
                 totalActiveCount.setText(list.get(0).getActive());
                 totalConfirmedCount.setText(list.get(0).getConfirmed());

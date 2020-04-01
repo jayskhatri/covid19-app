@@ -79,6 +79,7 @@ public class SelfTestActivity extends AppCompatActivity {
         btnNo.setOnClickListener(view -> nextQuestion(currentQue));
 
         //ads
+        MobileAds.initialize(this, initializationStatus -> {});
         mAdView = findViewById(R.id.adView_self_test);
 
         database = FirebaseDatabase.getInstance();
@@ -92,15 +93,7 @@ public class SelfTestActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 showadd = value;
                 if(showadd !=null)
-                    if(showadd.equals("yes")){
-                        MobileAds.initialize(getApplicationContext(), initializationStatus -> {
-                        });
-                        mAdView.setVisibility(View.VISIBLE);
-                        AdRequest adRequest = new AdRequest.Builder().build();
-                        mAdView.loadAd(adRequest);
-                    }else{
-                        mAdView.setVisibility(View.GONE);
-                    }
+                    showAds(showadd);
 
                 Log.d(TAG, "Value is: " + value);
             }
@@ -149,9 +142,48 @@ public class SelfTestActivity extends AppCompatActivity {
         }
 
     }
+
     @Override
     public boolean onSupportNavigateUp(){
         finish();
         return true;
+    }
+
+    private void showAds(String showad){
+        if(showad.equals("yes")){
+//            Log.e(TAG, "visibility on");
+            mAdView.setVisibility(View.VISIBLE);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }else{
+//            Log.e(TAG, "visibility off");
+            mAdView.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }
