@@ -24,7 +24,7 @@ public class ShareFragment extends Fragment {
 
     private Button whatsappShare;
     private TextView otherOptions;
-    private String shareMessage = "Hey I have been using this app for getting updates regarding covid19 in India, Download the application now.\n\n" + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+    private String shareMessage = "Hey I have been using this app for getting updates regarding covid19 in India, Download the application now.\n\n" + "bit.ly/covid19updatesindia";//"https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
