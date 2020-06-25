@@ -14,6 +14,8 @@
 > It&#39;s my project on Covid 19 Statisctics using [Covid19IndiaAPI](https://github.com/covid19india/api)
 
 ### 🏠 [Homepage](https://github.com/jayskhatri/covid19-app)
+## General Information
+This app completely rely on the mentioned api so if there is any change in api than we need to change the structure of our code.
 
 ## Prerequisites
 
