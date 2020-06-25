@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> It&#39;s my project on Covid 19 Statisctics using [Covid19India API] (https://github.com/covid19india/api)
+> It&#39;s my project on Covid 19 Statisctics using [Covid19IndiaAPI](https://github.com/covid19india/api)
 
 ### 🏠 [Homepage](https://github.com/jayskhatri/covid19-app)
 
