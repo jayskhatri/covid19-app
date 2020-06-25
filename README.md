@@ -1,4 +1,4 @@
-<h1 align="center">Covid 19  Statistics sApp 👋</h1>
+<h1 align="center">Covid 19  Statistics App 👋</h1>
 <p>
   <a href="https://github.com/jayskhatri/covid19-app#readme">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
