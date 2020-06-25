@@ -22,6 +22,13 @@ This app completely rely on the mentioned api so if there is any change in api t
 - Firebase
 - Should know how to handle HTTP Request
 
+## Features
+- Statewise statistics
+- Total Cases over India
+- Case Count in 4 category - Active Cases, Recivered Cases, Diseased Cases, Confirmed Cases
+- Self Test for the corona (Based on normal Questions)
+- Helpline numbers
+
 ## Author
 
 👤 **Jay Khatri**
