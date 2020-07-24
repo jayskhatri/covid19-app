@@ -22,6 +22,9 @@ This app completely rely on the mentioned api so if there is any change in api t
 - Firebase
 - Should know how to handle HTTP Request
 
+## GLimpses
+<img src="screenshot/covid19.gif" target="_blank" />
+
 ## Features
 - Statewise statistics
 - Total Cases over India
