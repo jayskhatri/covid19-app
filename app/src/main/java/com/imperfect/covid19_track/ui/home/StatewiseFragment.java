@@ -159,11 +159,10 @@ public class StatewiseFragment extends Fragment {
                         String lastUpdatedTime = c.getString("lastupdatedtime");
                         Log.e(TAG, "active: " + active + "in state: " + state + "\n");
                         // Delta node is JSON Object
-                        JSONObject delta = c.getJSONObject("delta");
-                        String delta_active = delta.getString("active");
-                        String delta_confirmed = delta.getString("confirmed");
-                        String delta_recovered = delta.getString("recovered");
-                        String delta_deaths = delta.getString("deaths");
+                        String delta_active="";
+                        String delta_confirmed=c.getString("deltaconfirmed");
+                        String delta_deaths=c.getString("deltadeaths");
+                        String delta_recovered=c.getString("deltarecovered");
 
                         StatewiseEntry entry = new StatewiseEntry(active, confirmed, deaths, recovered, state, lastUpdatedTime, delta_active, delta_confirmed, delta_recovered, delta_deaths);
                         list.add(entry);
