@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "647676975516",
+    "firebase_url": "https://covid19-app-6fdd2.firebaseio.com",
+    "project_id": "covid19-app-6fdd2",
+    "storage_bucket": "covid19-app-6fdd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647676975516:android:053f425b0a2004bdab9059",
+        "android_client_info": {
+          "package_name": "com.imperfect.covid19_track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647676975516-o1hae6gac501cql3nsfm1ls10ofqvmo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjmwqA5gRB0TKsNU8cx09H6Tm236QrjPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647676975516-o1hae6gac501cql3nsfm1ls10ofqvmo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
