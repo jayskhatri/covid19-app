@@ -32,7 +32,7 @@
             android:id="@+id/image_view_ad_test"
             android:layout_width="match_parent"
             android:layout_height="210dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
 
             />
 
